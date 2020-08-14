@@ -1,0 +1,48 @@
+
+.footer__card-images {
+    display: flex;
+    height: 20vh;
+    justify-content: space-between;
+    margin: 8vh 10vw 2vh 5vw;
+}
+
+.footer_image-item {
+    display: flex;
+    justify-items: center;
+    margin: 0px auto;
+    position: relative;
+    width: 45%;
+}
+
+.footer__image-uptc {
+    background: url(../../assets/footer/UPTC.png) no-repeat;
+    background-size: contain;
+    height: 80%;
+    position: absolute;
+    width: 100%;
+}
+
+.footer__image-vig {
+    background: url(../../assets/footer/VIGILADO.png) no-repeat;
+    background-size: contain;
+    bottom: 5%;
+    height: 10%;
+    position: absolute;
+    width: 100%;
+}
+
+.footer__image-gira {
+    background: url(../../assets/footer/GIRA.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 80%;
+    margin: 5% 0px;
+    position: absolute;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .footer__card-images {
+        height: 10vh;
+    }
+}

@@ -1,0 +1,29 @@
+
+input {
+    border: none;
+    border-bottom: 2px solid $tertiary;
+    color: $tertiary;
+    height: 3.2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 1rem auto;
+    width: 100%;
+
+    &:focus, &:hover {
+        outline: none;
+    }
+}
+
+@media (max-width: 400px) {
+    input {
+        font-size: 0.9rem;
+        height: 2rem;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    input {
+        font-size: 1.5rem;
+        height: 2rem;
+    }
+}

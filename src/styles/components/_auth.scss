@@ -1,0 +1,221 @@
+
+.auth__main {
+    height: 100vh;
+    width: 100vw;
+}
+
+.auth__backgroud {
+    background-image: url(../../assets/auth/background.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.auth__head {
+    background: url(../../assets/auth/logo.png) no-repeat;
+    background-size: contain;
+    height: 25vh;
+    margin: 0px auto;
+    width: 30%;
+}
+
+.auth__title {
+    font-weight: 300;
+    font-size: 3.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.auth__link-item {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.auth__link-primary {
+    color: $primary;
+}
+
+.auth__link-secondary {
+    color: darken($color: $tertiary, $amount: 20);
+}
+
+@media (max-width: 400px) {
+    .auth__head {
+        height: 15vh;
+        width: 50%;
+        margin: 5vh auto;
+    }
+
+    .auth__title {
+        font-size: 2rem;
+        letter-spacing: 0px;
+        margin-bottom: 5vh;
+    }
+
+    .auth__link-item {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    .auth__head {
+        height: 15vh;
+        width: 50%;
+        margin: 5vh auto;
+    }
+
+    .auth__link-item {
+        font-size: 1.2rem;
+    }
+}
+
+/* LoginScreen */
+
+.auth__tape {
+    background: url(../../assets/auth/tape.png) no-repeat;
+    background-size: contain;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 27%;
+    width: 100%;
+}
+
+.auth__wellcome {
+    background: url(../../assets/auth/wellcome.png) no-repeat;
+    background-size: contain;
+    height: 40vh;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.auth__circuit {
+    background: url(../../assets/auth/circuit.png) no-repeat;
+    background-size: contain;
+    height: 45vh;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 10%;
+}
+
+.auth__card-login {
+    background-color: $white;
+    position: absolute;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+}
+
+.auth__card-title-login {
+    margin: 1vh 5vw;
+}
+
+.auth__card-form-login {
+    margin: 2vh 10vw 2vh 5vw;
+}
+
+.auth__card-link {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 10vw 2vh 5vw;
+}
+
+@media (max-width: 400px) {
+    .auth__wellcome {
+        height: 30vh;
+        width: 25%;
+    }
+
+    .auth__card-login {
+        left: 18%;
+        width: 82%;
+    }
+
+    .auth__circuit {
+        height: 30vh;
+        width: 20%;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    .auth__tape {
+        visibility: hidden;
+    }
+
+    .auth__wellcome {
+        height: 40vh;
+        width: 30%;
+    }
+
+    .auth__card-login {
+        left: 18%;
+        width: 82%;
+    }
+}
+
+/* RegisterScreen */
+
+.auth__card-register {
+    background-color: $white;
+    padding-top: 3vh;
+    position: absolute;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 35%;
+    width: 65%;
+}
+
+.auth__card-title-register {
+    margin: 1vh 15vw;
+}
+
+.auth__card-form-register {
+    margin: 2vh 15vw;
+}
+
+.auth__card-link-login {
+    padding: 2vh 2vw;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+
+.auth__message {
+    bottom: 0px;
+    color: $white;
+    left: 0px;
+    height: 25vh;
+    font-weight: 300;
+    padding: 5vh 5vw;
+    position: fixed;
+    width: 29vw;
+}
+
+.auth__message-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth__message-body{
+    font-size: 2rem;
+}
+
+@media (max-width: 400px) {
+    
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    
+}

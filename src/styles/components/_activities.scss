@@ -1,0 +1,157 @@
+
+.activities__main {
+    overflow: hidden;
+    width: 100vw;
+}
+
+.activities__bottom-logout {
+    position: relative;
+}
+
+.activities__logout {
+    color: $white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0px;
+    text-decoration: none;
+    top: 0px;
+    padding: 6vw 5vh;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.activities__image-top {
+    background: url(../../assets/activities/top.png) no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: 34vh;
+    position: absolute;
+    width: 100%;
+}
+
+.activities__profile-info {
+    height: 34vh;
+    padding: 5vh 10vw;
+    width: 90vw;
+}
+
+.activities__profile-name {
+    color: darken($color: $tertiary, $amount: 25);
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 2vh 3vw;
+}
+
+.activities__profile-message {
+    color: darken($color: $tertiary, $amount: 10);
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 2vh 0px;
+}
+
+.activities__container {
+    width: 60%;
+    margin: 10vh auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.activities__title-info {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2vh 0px;
+}
+
+.activities__subtitle-info {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1vh 0px;
+}
+
+.activities__body-info {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 1vh 0px;
+}
+
+.activities__card-activities {
+    border: 1px solid $primary;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 2px 2px $primary;
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0px;
+    padding: 3vh 3vw;
+}
+
+.activities__card-activities-item {
+    border: 1px solid $tertiary;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 2px 2px $tertiary;
+    height: 20vh;
+    margin: 1vh 2vw;
+    width: 20%;
+}
+
+.activities__card-activities-icon {
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    margin: 10% auto;
+    width: 60%;
+}
+
+.activities__card_activities-title {
+    margin: 0px auto;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.activities__middle {
+    background: url(../../assets/activities/middle.png) no-repeat;
+    background-size: contain;
+    color: $white;
+    height: 40vh;
+    text-align: center;
+    width: 100%;
+}
+
+.activities__middle-title {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-top: 5vh;
+}
+
+.activities__middle-body {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-top: 5vh;
+}
+
+.activities__image-bottom {
+    background: url(../../assets/activities/bottom.png) no-repeat;
+    background-position: left;
+    background-size: contain;
+    height: 40vh;
+    width: 100%;
+}
+
+.activities__card-images {
+    display: flex;
+    height: 20vh;
+    justify-content: space-around;
+    margin: 0px 0px;
+    padding: 0px auto;
+}
+
+.activities_image-item {
+    display: flex;
+    justify-items: center;
+    margin: 0px auto;
+    position: relative;
+    width: 20%;
+}
