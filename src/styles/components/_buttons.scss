@@ -13,6 +13,11 @@
     color: $white;
     font-size: 1.2rem;
     font-weight: 700;
+
+    &:disabled {
+        background: $tertiary;
+        background: linear-gradient(304deg, $tertiary 0%, $tertiary 100%);
+    }
 }
 
 @media (max-width: 400px) {

@@ -1,20 +1,28 @@
 import React from 'react';
 
 import icon from '../../assets/activities/icon-activity-1.png'
-import { Link } from 'react-router-dom';
+import { Link as span } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { endAWSLogin } from '../../redux/actions/auth';
 
 export const ActivitiesScreen = () => {
+    const dispatch = useDispatch();
+
+    const logout = () => {
+        dispatch(endAWSLogin());
+    }
+
     return (
         <div className="activities__main">
             <div className="activities__bottom-logout">
                 <div className="activities__image-top"></div>
                 <div className="pointer">
-                    <Link 
+                    <span 
                         className="activities__logout"
-                        to='/auth/login'
+                        onClick={ logout }
                     >
                         Cerrar Sesión
-                    </Link>
+                    </span>
                 </div>
             </div>
             <div className="activities__profile-info">

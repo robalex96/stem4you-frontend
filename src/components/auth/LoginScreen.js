@@ -1,10 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { Footer } from '../footer/Footer';
+import { useForm } from '../../hooks/useForm';
+import { startAWSLogin } from '../../redux/actions/auth';
 
 export const LoginScreen = () => {
+    const dispatch = useDispatch();
+
+    const { loading } = useSelector(state => state.ui);
+
+    const [formValues, handleInputChange] = useForm({
+        email: '',
+        password: ''
+    });
+
+    const { email, password } = formValues;
+
     const handleSubmit = event => {
         event.preventDefault();
+        dispatch(startAWSLogin(email, password));
     }
 
     return (
@@ -22,14 +38,21 @@ export const LoginScreen = () => {
                         <input 
                             type="text"
                             placeholder="Usuario"
+                            name="email"
+                            value={ email }
+                            onChange={ handleInputChange }
                         />
                         <input 
                             type="password"
                             placeholder="Contraseña"
+                            name="password"
+                            value={ password }
+                            onChange={ handleInputChange }
                         />
                         <button
                             className="btn btn-primary"
                             type="submit"
+                            disabled={ loading }
                         >
                             Iniciar Sesión
                         </button>
@@ -44,7 +67,7 @@ export const LoginScreen = () => {
                     </Link>
                     <Link
                         className="auth__link-item auth__link-secondary"
-                        to='/about'    
+                        to='/auth/about'    
                     >
                         Acerca del proyecto
                     </Link>
