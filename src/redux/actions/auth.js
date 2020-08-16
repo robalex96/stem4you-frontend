@@ -48,12 +48,20 @@ export const endAWSLogin = () => {
     });
 }
 
-export const startCreateUser = (username, password, id, token) => {
+export const startCreateUser = (username, password) => {
     return (async (dispacth) => {
         dispacth(starLoading());
         try{
             await Auth.signUp({ username, password });
-            dispacth(startAWSLogin(username, password));
+            const { value: code } = await Swal.fire({
+                title: 'Por favor, revice su correo e ingrese el código de verificación',
+                input: 'text',
+                inputPlaceholder: 'Código de verificación'
+            });
+            const response = await Auth.confirmSignUp(username, code);
+            if(response === 'SUCCESS'){
+                dispacth(startAWSLogin(username, password));
+            }
         }
         catch (error){
             Swal.fire('Error', error.message, 'error');

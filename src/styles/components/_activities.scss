@@ -11,12 +11,12 @@
 .activities__logout {
     color: $white;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     position: absolute;
     right: 0px;
     text-decoration: none;
     top: 0px;
-    padding: 6vw 5vh;
+    padding: 3vw 5vh;
 
     &:hover {
         text-decoration: underline;
@@ -27,22 +27,23 @@
     background: url(../../assets/activities/top.png) no-repeat;
     background-position: right;
     background-size: contain;
-    height: 34vh;
+    height: 70vh;
     position: absolute;
     width: 100%;
+    z-index: -1;
 }
 
 .activities__profile-info {
-    height: 34vh;
+    height: 70vh;
     padding: 5vh 10vw;
-    width: 90vw;
+    width: 90%;
 }
 
 .activities__profile-name {
     color: darken($color: $tertiary, $amount: 25);
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 700;
-    margin: 2vh 3vw;
+    margin: 5vh 3vw;
 }
 
 .activities__profile-message {
