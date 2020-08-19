@@ -2,7 +2,8 @@ import { types } from "../types/types";
 
 const initialState = {
     getMethod: false,
-    postMethod: false
+    postMethod: false,
+    user: {}
 }
 
 export const apiReducer = (state=initialState, action) => {
@@ -15,7 +16,8 @@ export const apiReducer = (state=initialState, action) => {
         case types.apiGetMethodFinish:
         return {
             ...state,
-            getMethod: false
+            getMethod: false,
+            user: action.payload
         }
         case types.apiPostMethodStart:
         return {

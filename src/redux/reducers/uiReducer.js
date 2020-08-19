@@ -2,7 +2,8 @@ import { types } from '../types/types';
 
 const initialState = {
     loading: false,
-    msgError: null
+    msgError: null,
+    created: false
 }
 
 export const uiReducer = (state=initialState, action) => {
@@ -27,6 +28,18 @@ export const uiReducer = (state=initialState, action) => {
                 ...state,
                 loading: false
             }
+        case types.uiStartCreateUser:
+            return {
+                ...state,
+                created: true
+            }
+        case types.uiFinishCreateUser:
+            return {
+                ...state,
+                created: false
+            }
+        case types.uiFinishSession:
+            return initialState;
         default:
             return state;
     }

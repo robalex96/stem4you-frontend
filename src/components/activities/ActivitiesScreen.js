@@ -1,16 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import icon from '../../assets/activities/icon-activity-1.png'
-import { Link as span } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import icon from '../../assets/activities/icon-activity-1.png';
+import { useDispatch, useSelector } from 'react-redux';
 import { endAWSLogin } from '../../redux/actions/auth';
+import { endUI } from '../../redux/actions/ui';
+import { postApi, getApi } from '../../helpers/apiHelper';
+import { getInfo } from '../../redux/actions/api';
 
 export const ActivitiesScreen = () => {
+    const { id, user } = useSelector(state => state.auth);
+    const { user:userApi } = useSelector(state => state.api);
+    const { created } = useSelector(state => state.ui);
     const dispatch = useDispatch();
+    const [post, setPost] = useState(false);
+
+    useEffect(() => {
+        async function api(){
+            await postApi('users', { id, ...user });
+            setPost(true);
+        }
+        if (created){
+            api();
+        }
+    }, [dispatch, created, id, user]);
+
+    useEffect(() => {
+        async function api(){
+            const user = await getApi(`users/${ id }`);
+            dispatch(getInfo(user.Item));
+        }
+        api();
+    }, [dispatch, id, post])
 
     const logout = () => {
+        dispatch(endUI());
         dispatch(endAWSLogin());
     }
+
+    const { name } = userApi;
 
     return (
         <div className="activities__main">
@@ -27,7 +54,7 @@ export const ActivitiesScreen = () => {
             </div>
             <div className="activities__profile-info">
                 <p className="activities__profile-name">
-                    Robert Alexander Limas Sierra
+                    { name }
                 </p>
                 <p className="activities__profile-message">
                     Bienvenido a tu espacio de apoyo tecnológico.

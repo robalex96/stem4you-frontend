@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import { Auth } from "aws-amplify";
 
 import { types } from "../types/types";
-import { starLoading, finishLoading } from "./ui";
+import { starLoading, finishLoading, startCreateUserUI, endUI } from "./ui";
 
 export const login = (id, token) => {
     return {
@@ -48,25 +48,43 @@ export const endAWSLogin = () => {
     });
 }
 
-export const startCreateUser = (username, password) => {
+export const startCreateUser = (email, password, name, institute, course, age, gender) => {
     return (async (dispacth) => {
         dispacth(starLoading());
+        dispacth(startCreateUserUI());
         try{
-            await Auth.signUp({ username, password });
+            await Auth.signUp({ username:email, password });
             const { value: code } = await Swal.fire({
                 title: 'Por favor, revice su correo e ingrese el código de verificación',
                 input: 'text',
                 inputPlaceholder: 'Código de verificación'
             });
-            const response = await Auth.confirmSignUp(username, code);
+            const response = await Auth.confirmSignUp(email, code);
             if(response === 'SUCCESS'){
-                dispacth(startAWSLogin(username, password));
+                dispacth(startAWSLogin(email, password));
+                dispacth(createdUser(name, email, institute, course, age, gender));
             }
+            dispacth(finishLoading());
         }
         catch (error){
             Swal.fire('Error', error.message, 'error');
+            dispacth(endUI());
             dispacth(finishLoading());
         }
 
     });
+}
+
+export const createdUser = (name, email, institute, course, age, gender) => {
+    return {
+        type: types.creatingUser,
+        payload: {
+            name,
+            email,
+            institute,
+            course,
+            age,
+            gender
+        }
+    }
 }

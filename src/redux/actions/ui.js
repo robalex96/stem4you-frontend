@@ -24,3 +24,21 @@ export const finishLoading = () => {
         type: types.uiFinishLoading
     }
 }
+
+export const startCreateUserUI = () => {
+    return {
+        type: types.uiStartCreateUser
+    }
+}
+
+export const finishCreateUserUI = () => {
+    return {
+        type: types.uiFinishCreateUser
+    }
+}
+
+export const endUI = () => {
+    return {
+        type: types.uiFinishSession
+    }
+}

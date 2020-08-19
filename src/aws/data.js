@@ -7,7 +7,7 @@ export const data = {
     },
     API: {
       REGION: "us-east-1",
-      endpoint: "https://kyhn5euat6.execute-api.us-east-1.amazonaws.com/dev"
+      endpoint: "https://ju21ch4l68.execute-api.us-east-1.amazonaws.com/dev"
     }
   };
   

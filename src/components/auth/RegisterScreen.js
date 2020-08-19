@@ -34,7 +34,7 @@ export const RegisterScreen = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        dispacth(startCreateUser(email, password));
+        dispacth(startCreateUser(email, password, name, institute, course, age, gender));
     }
 
     return (
@@ -73,7 +73,7 @@ export const RegisterScreen = () => {
                             <div className="col-md-6">
                                 <input 
                                     type="password"
-                                    placeholder="Contraseña"
+                                    placeholder="CONTRASEÑA"
                                     name="password"
                                     value={ password }
                                     onChange={ handleInputChange }
@@ -82,7 +82,7 @@ export const RegisterScreen = () => {
                             <div className="col-md-6">
                                 <input 
                                     type="password"
-                                    placeholder="Confirmar Contraseña"
+                                    placeholder="CONFIRMAR CONTRASEÑA"
                                     name="confirmPassword"
                                     value={ confirmPassword }
                                     onChange={ handleInputChange }
