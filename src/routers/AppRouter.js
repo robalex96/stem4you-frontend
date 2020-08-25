@@ -30,8 +30,7 @@ export const AppRouter = () => {
                         isLogged={ isLogged }
                     />
                     <PrivateRoute 
-                        exact
-                        path='/'
+                        path='/activity'
                         component={ PrivateRouter }
                         isLogged={ isLogged}
                     />

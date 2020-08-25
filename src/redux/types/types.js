@@ -3,6 +3,8 @@ export const types = {
     logout: '[Auth] Logout',
     creatingUser: '[Auth] CreateUser',
 
+    userInfo: '[User] User Info',
+
     uiSetError: '[UI] Set Error',
     uiRemoveError: '[UI] Remove Error',
     uiStartLoading: '[UI] Start Loading',
@@ -11,8 +13,6 @@ export const types = {
     uiFinishCreateUser: '[UI] Finish Create users',
     uiFinishSession: '[UI] Finish Session',
 
-    apiPostMethodStart: '[API] Post Method Start',
-    apiPostMethodFinish: '[API] Post Method Finish',
-    apiGetMethodStart: '[API] Get Method Start',
-    apiGetMethodFinish: '[API] Get Method Finish'
+    activityLoad: '[Activity] Load activities',
+    currentActivity: '[Activity] Current activity'
 }

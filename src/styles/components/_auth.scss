@@ -20,6 +20,7 @@
 }
 
 .auth__title {
+    color: $primary;
     font-weight: 300;
     font-size: 3.5rem;
     letter-spacing: 0.1rem;
@@ -113,6 +114,7 @@
     position: fixed;
     top: 0px;
     left: 50%;
+    overflow-y: scroll;
     width: 50%;
 }
 
@@ -174,6 +176,7 @@
     position: fixed;
     top: 0px;
     left: 35%;
+    overflow-y: scroll;
     width: 65%;
 }
 
@@ -213,9 +216,27 @@
 }
 
 @media (max-width: 400px) {
-    
+    .auth__card-register {
+        left: 0%;
+        width: 100%;
+    }
+
+    .auth__message {
+        visibility: hidden;
+    }
 }
 
 @media (min-width: 401px) and (max-width: 800px) {
-    
+    .auth__card-register {
+        left: 18%;
+        width: 82%;
+    }
+
+    .auth__card-form-register {
+        margin: 2vh 10vw;
+    }
+
+    .auth__message {
+        visibility: hidden;
+    }
 }

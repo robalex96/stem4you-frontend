@@ -20,6 +20,12 @@ export const logout = () => {
     }
 }
 
+export const userInfo = () => {
+    return {
+        type: types.userInfo
+    }
+}
+
 export const startAWSLogin = (user, password) => {
     return (async (dispacth) => {
         dispacth(starLoading());

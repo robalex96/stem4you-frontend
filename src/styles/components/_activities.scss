@@ -1,3 +1,4 @@
+/* ActivitiesScreen */
 
 .activities__main {
     overflow: hidden;
@@ -80,9 +81,6 @@
 }
 
 .activities__card-activities {
-    border: 1px solid $primary;
-    border-radius: 0.5em;
-    box-shadow: 2px 2px 2px 2px $primary;
     display: flex;
     justify-content: center;
     margin: 5vh 0px;
@@ -111,6 +109,11 @@
     font-size: 1.2rem;
     font-weight: 300;
     text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .activities__middle {
@@ -156,4 +159,264 @@
     margin: 0px auto;
     position: relative;
     width: 20%;
+}
+
+@media (max-width: 400px) {
+    .activities__image-top {
+        background-size: cover;
+        height: 50vh;
+        margin: 0px;
+        z-index: -1;
+    }
+
+    .activities__logout {
+        font-size: 0.8rem;
+    }
+
+    .activities__profile-info {
+        height: 40vh;
+        padding: 5vh 5vw;
+    }
+    
+    .activities__profile-name {
+        color: $white;
+        font-size: 3rem;
+        margin: 5vh 3vw;
+    }
+    
+    .activities__profile-message {
+        color: $white;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 2vh 0px;
+    }
+
+    .activities__container {
+        width: 80%;
+        margin: 0px auto;
+    }
+
+    .activities__title-info {
+        font-size: 1.5rem;
+    }
+
+    .activities__subtitle-info {
+        font-size: 1rem;
+    }
+
+    .activities__body-info {
+        font-size: 0.8rem;
+    }
+
+    .activities__card-activities {
+        margin: 3vh 0px;
+        padding: 3vh auto;
+    }
+    
+    .activities__card-activities-item {
+        height: 13vh;
+        margin: 1vh auto;
+        width: 40%;
+    }
+    
+    .activities__card-activities-icon {
+        height: 45%;
+        margin: 10% auto;
+        width: 20%;
+    }
+    
+    .activities__card_activities-title {
+        font-size: 1rem;
+    }
+
+    .activities__middle {
+        background-position: center center;
+        background-size: cover;
+        height: 20vh;
+    }
+
+    .activities__middle-title {
+        font-size: 1.5rem;
+        padding-top: 5vh;
+    }
+
+    .activities__middle-body {
+        font-size: 0.8rem;
+        padding-top: 2vh;
+    }
+
+    .activities__card-images {
+        height: 15vh;
+        padding-top: 5vh;
+    }
+    
+    .activities_image-item {
+        width: 40%;
+    }
+
+    .activities__image-bottom {
+        height: 15vh;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 800px) {
+    .activities__image-top {
+        background-size: cover;
+        height: 40vh;
+        margin: 0px;
+        z-index: -1;
+    }
+
+    .activities__logout {
+        font-size: 0.9rem;
+    }
+
+    .activities__profile-info {
+        height: 30vh;
+        padding: 5vh 5vw;
+    }
+    
+    .activities__profile-name {
+        color: darken($color: $tertiary, $amount: 25);
+        font-size: 3.5rem;
+        margin: 5vh 3vw;
+    }
+    
+    .activities__profile-message {
+        color: darken($color: $tertiary, $amount: 20);
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 2vh 0px;
+    }
+
+    .activities__container {
+        width: 80%;
+        margin: 0px auto;
+    }
+
+    .activities__title-info {
+        font-size: 2.2rem;
+    }
+
+    .activities__subtitle-info {
+        font-size: 1.5rem;
+    }
+
+    .activities__body-info {
+        font-size: 1.2rem;
+    }
+
+    .activities__card-activities {
+        margin: 3vh 0px;
+        padding: 3vh auto;
+    }
+    
+    .activities__card-activities-item {
+        height: 13vh;
+        margin: 1vh auto;
+        width: 30%;
+    }
+    
+    .activities__card-activities-icon {
+        height: 30%;
+        margin: 10% auto;
+        width: 20%;
+    }
+    
+    .activities__card_activities-title {
+        font-size: 1.3rem;
+    }
+
+    .activities__middle {
+        background-position: center center;
+        background-size: cover;
+        height: 20vh;
+    }
+
+    .activities__middle-title {
+        font-size: 2rem;
+        padding-top: 5vh;
+    }
+
+    .activities__middle-body {
+        font-size: 1.5rem;
+        padding-top: 2vh;
+    }
+
+    .activities__card-images {
+        height: 15vh;
+        padding-top: 5vh;
+    }
+    
+    .activities_image-item {
+        width: 40%;
+    }
+
+    .activities__image-bottom {
+        height: 15vh;
+    }
+}
+
+/* ActivityScreen */
+
+.activities__boxinfo {
+    background-color: rgb(252, 252, 252);
+    border-radius: 0px 40px 40px 0px;
+    box-shadow: 0px 0px 12px rgba($color: $white, $alpha: 1.0);
+    position: fixed;
+    top: 10%;
+    opacity: 0.8;
+    width: 80px;
+}
+
+.activities__boxinfo span {
+    color: rgb(70, 70, 70);
+    font-size: 40px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.activities__activity-frame {
+    height: 110vh;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+.activities__activity-btnnx {
+    background-color: $white;
+    border-radius: 30px 0px 0px 0px;
+    bottom: 0px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 1);
+    color: black;
+    font-weight: 700;
+    opacity: 0.5;
+    padding: 16px;
+    position: fixed;
+    right: 0px;
+    text-align: center;
+    width: 130px;
+}
+
+.activities__activity {
+    color: $white;
+    position: fixed;
+    top: 5em;
+    right: 5em;
+}
+
+.activities__activity-title {
+    font-size: 6.5em;
+    font-weight: 600;
+    margin-top: -10px;
+    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activities__activity-subtitle {
+    font-size: 2.2em;
+    font-weight: 300;
+    padding-left: 50px;
+    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
 }

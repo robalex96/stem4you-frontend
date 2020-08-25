@@ -1,43 +1,46 @@
 import React, { useEffect, useState } from 'react';
 
-import icon from '../../assets/activities/icon-activity-1.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { endAWSLogin } from '../../redux/actions/auth';
+import { loadActivities } from '../../redux/actions/activity'
 import { endUI } from '../../redux/actions/ui';
 import { postApi, getApi } from '../../helpers/apiHelper';
-import { getInfo } from '../../redux/actions/api';
+import { userData } from '../../redux/actions/user';
+import { ActivityCard } from './ActivityCard';
 
 export const ActivitiesScreen = () => {
-    const { id, user } = useSelector(state => state.auth);
-    const { user:userApi } = useSelector(state => state.api);
+    const { id, user, token } = useSelector(state => state.auth);
     const { created } = useSelector(state => state.ui);
+    const { user:Data } = useSelector(state => state.user);
     const dispatch = useDispatch();
     const [post, setPost] = useState(false);
 
     useEffect(() => {
         async function api(){
-            await postApi('users', { id, ...user });
+            await postApi('users', { id, ...user }, token);
             setPost(true);
         }
         if (created){
             api();
         }
-    }, [dispatch, created, id, user]);
+    }, [dispatch, created, id, user, token]);
 
     useEffect(() => {
         async function api(){
-            const user = await getApi(`users/${ id }`);
-            dispatch(getInfo(user.Item));
+            const user = await getApi(`users/${ id }`, token);
+            dispatch(userData(user.Item));
+            const activitiesData = await getApi('activities', token);
+            dispatch(loadActivities(activitiesData.Items));
         }
         api();
-    }, [dispatch, id, post])
+    }, [dispatch, id, post, token])
 
     const logout = () => {
         dispatch(endUI());
         dispatch(endAWSLogin());
     }
 
-    const { name } = userApi;
+    const { name } = Data;
 
     return (
         <div className="activities__main">
@@ -60,27 +63,7 @@ export const ActivitiesScreen = () => {
                     Bienvenido a tu espacio de apoyo tecnológico.
                 </p>
             </div>
-            <div className="activities__container">
-                <div className="activities__title-info">
-                    Mensaje Actividades
-                </div>
-                <div className="activities__subtitle-info">
-                    Mensaje Actividades
-                </div>
-                <div className="activities__body-info">
-                    Lo que se quiera poner
-                </div>
-                <div className="activities__card-activities">
-                    <div className="activities__card-activities-item pointer">
-                        <div className="activities__card-activities-icon">
-                            <img src={icon} alt="icon" />
-                        </div>
-                        <div className="activities__card_activities-title">
-                            Viaje a Marte
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ActivityCard />
             <div className="activities__middle">
                 <div className="activities__middle-title">
                     STEM4you

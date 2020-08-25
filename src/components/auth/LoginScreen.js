@@ -44,7 +44,7 @@ export const LoginScreen = () => {
                         />
                         <input 
                             type="password"
-                            placeholder="CONTRASEÑA"
+                            placeholder="Contraseña"
                             name="password"
                             value={ password }
                             onChange={ handleInputChange }

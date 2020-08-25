@@ -14,7 +14,7 @@ export const PublicRoute = ({
                 (!isLogged) ?
                 <Component {...props} /> 
                 :
-                <Redirect to='/' />
+                <Redirect to='/activity' />
             )}
         />
     )

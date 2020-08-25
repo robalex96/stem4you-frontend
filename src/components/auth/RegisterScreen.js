@@ -48,7 +48,7 @@ export const RegisterScreen = () => {
                 <div className="auth__card-form-register">
                     <form onSubmit={ handleSubmit }>
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-xs-12">
                                 <input 
                                     type="text"
                                     placeholder="Nombre"
@@ -59,7 +59,7 @@ export const RegisterScreen = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-xs-12">
                                 <input 
                                     type="text"
                                     placeholder="Correo"
@@ -70,19 +70,19 @@ export const RegisterScreen = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-xs-12 col-md-6">
                                 <input 
                                     type="password"
-                                    placeholder="CONTRASEÑA"
+                                    placeholder="Contraseña"
                                     name="password"
                                     value={ password }
                                     onChange={ handleInputChange }
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-xs-12 col-md-6">
                                 <input 
                                     type="password"
-                                    placeholder="CONFIRMAR CONTRASEÑA"
+                                    placeholder="Confirmar Contraseña"
                                     name="confirmPassword"
                                     value={ confirmPassword }
                                     onChange={ handleInputChange }
@@ -90,7 +90,7 @@ export const RegisterScreen = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-8">
+                            <div className="col-xs-12 col-md-8">
                                 <input 
                                     type="text"
                                     placeholder="Institución"
@@ -99,7 +99,7 @@ export const RegisterScreen = () => {
                                     onChange={ handleInputChange }
                                 />
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-xs-12 col-md-4">
                                 <input 
                                     type="text"
                                     placeholder="Curso"
@@ -110,7 +110,7 @@ export const RegisterScreen = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-xs-12 col-md-6">
                                 <input 
                                     type="text"
                                     placeholder="Edad"
@@ -119,7 +119,7 @@ export const RegisterScreen = () => {
                                     onChange={ handleInputChange }
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-xs-12 col-md-6">
                                 <input 
                                     type="text"
                                     placeholder="Genero"

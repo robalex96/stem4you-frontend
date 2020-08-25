@@ -2,8 +2,7 @@ import { types } from '../types/types';
 
 const initialState = {
     id: '',
-    token: '',
-    user: null
+    token: ''
 }
 
 export const authReducer = (state=initialState, action) => {

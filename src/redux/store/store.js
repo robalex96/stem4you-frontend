@@ -3,14 +3,16 @@ import thunk from 'redux-thunk';
 
 import { authReducer } from '../reducers/authReducer';
 import { uiReducer } from '../reducers/uiReducer';
-import { apiReducer } from '../reducers/apiReducer';
+import { userReducer } from '../reducers/userReducer';
+import { activityReducer } from '../reducers/activityReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const reducers = combineReducers({
     auth: authReducer,
     ui: uiReducer,
-    api: apiReducer
+    user: userReducer,
+    activity: activityReducer
 });
 
 export const store = createStore(
